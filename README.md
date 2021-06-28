@@ -37,11 +37,14 @@ require 'topgg'
 require 'discordrb'
 
 bot = Discordrb::Bot.new token: "TOKEN"
-client = Topgg.new("AUTH_TOKEN", "BOTID")
 
-client.autoPostStats(bot) # The discordrb bot client.
+client = Topgg.new("AUTH_TOKEN", "BOTID")
+ bot.ready do |event|
+ client.autoPostStats(bot) # The discordrb bot client.
+end
+bot.run
 ```
 
 # Documentation
 
-Check out the documentation [here](https://docs.top.gg)
+Check out the documentation [here](https://rubydoc.info/gems/topgg/)
