@@ -44,4 +44,4 @@ client.autoPostStats(bot) # The discordrb bot client.
 
 # Documentation
 
-Check out the documentation [here](https://discord.com)
+Check out the documentation [here](https://docs.top.gg)
