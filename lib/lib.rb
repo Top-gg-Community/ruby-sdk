@@ -93,11 +93,18 @@ class Topgg
   # Autopost stats on to the top.gg website
   # @param client [Discordrb::Bot] instanceof discordrb client.
   def autoPostStats(client)
-    serverLen = client.servers.length
-    interval 1800 do
-      postStats(serverLen)
+    semaphore = Mutex.new
+    Thread.new do
+      semaphore.synchronize do
+        interval 1800 do
+          serverLen = client.servers.length
+          postStats(serverLen)
+          print("[TOPGG] : \033[31;1;4m Bot statistics has been successfully posted!\033[0m")
+        end
+      end
     end
   end
+
   # Mini-method to get statistics on self
   # @return [getBot]
   def self
@@ -107,7 +114,8 @@ class Topgg
   def interval(seconds)
     loop do
       yield
-      sleep seconds
+     sleep seconds
+
     end
   end
 end
