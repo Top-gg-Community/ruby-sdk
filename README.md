@@ -28,8 +28,7 @@ client.getBot("1234").defAvatar
 ```
 ### AutoPosting
 
-The wrapper provides you with autoposting functionality
-with the wrapper posting bot statistics every 30 minutes.
+The library provides you with autoposting functionality, and autoposts statistics every 30 minutes, automatically!
 Here's how you can enable it
 
 ```ruby
