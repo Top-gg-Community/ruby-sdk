@@ -14,7 +14,7 @@ module Spreader
     # The Total number of results
     # @return [Integer]
     def total
-      @obj['total']
+      @obj['total'].to_i
     end
 
     # The first result
@@ -26,7 +26,7 @@ module Spreader
     # The number of bots shown in the first page
     # @return [Integer]
     def count
-      @obj['count']
+      @obj['count'].to_i
     end
 
     # Iterates through the results

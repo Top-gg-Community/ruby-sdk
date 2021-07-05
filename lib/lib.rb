@@ -24,20 +24,18 @@ class Topgg
   # The method fetches bot statistics from top.gg
   # @param id [String] The id of the bot you want to fetch statistics from.
   # @return [Spreader::Bot] The Bot Object
-  def getBot(id)
+  def get_bot(id)
     resp = @conn.get("bots/#{id}")
 
     Spreader::Bot.new(JSON.parse(resp.body))
   end
 
   # The method searches bots from top.gg using a keyword query.
-  # @param query [String] the search term
-  # @param limit [Integer] the amount of results to return
-  # @param offset [Integer] The Amount of bots to skip
-  # @param sort [Boolean] The fields to sort by.
+  # @param [Object] params The parameters that can be used to query a search
+  # To know what the parameters are check it out here
   # @return [Spreader::BotSearch] The BotSearch Object
-  def searchBot(query, limit: 50, offset: 0, sort: nil, fields: nil)
-    resp = @conn.get('bots', { search: query, limit: limit, offset: offset, sort: sort, fields: fields })
+  def search_bot(params)
+    resp = @conn.get('bots', params)
     Spreader::BotSearch.new(JSON.parse(resp.body))
   end
 
@@ -53,7 +51,7 @@ class Topgg
   # Get Bot statistics.
   # @param id [String] Id of the bot you want to get statistics of
   # @return [Spreader::Stats]
-  def getStats(id)
+  def get_stats(id)
     resp = @conn.get("bots/#{id}/stats")
 
     Spreader::Stats.new(JSON.parse(resp.body))
@@ -81,7 +79,7 @@ class Topgg
   # @param server_count [Integer] The amount of servers the bot is in.
   # @param shards [Integer] The amount of servers the bot is in per shard
   # @param shard_count [Integer] The total number of shards.
-  def postStats(server_count, shards: nil, shard_count: nil)
+  def post_stats(server_count, shards: nil, shard_count: nil)
     jsonPost = {
       server_count: server_count,
       shards: shards,
@@ -92,7 +90,7 @@ class Topgg
 
   # Autopost stats on to the top.gg website
   # @param client [Discordrb::Bot] instanceof discordrb client.
-  def autoPostStats(client)
+  def auto_post_stats(client)
     semaphore = Mutex.new
     Thread.new do
       semaphore.synchronize do
@@ -119,5 +117,6 @@ class Topgg
     end
   end
 end
+
 
 
