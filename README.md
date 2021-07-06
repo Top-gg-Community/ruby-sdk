@@ -21,7 +21,7 @@ require 'topgg'
 
 client = Topgg.new("AUTH_TOKEN", "BOTID")
 
-client.getBot("1234").defAvatar
+client.get_bot("1234").defAvatar
 # returns
 # "6debd47ed13483642cf09e832ed0bc1b"
 
@@ -39,7 +39,7 @@ bot = Discordrb::Bot.new token: "TOKEN"
 
 client = Topgg.new("AUTH_TOKEN", "BOTID")
  bot.ready do |event|
- client.autoPostStats(bot) # The discordrb bot client.
+ client.auto_post_stats(bot) # The discordrb bot client.
 end
 bot.run
 ```
