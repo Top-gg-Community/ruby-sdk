@@ -103,7 +103,7 @@ class Topgg
     end
   end
 
-  # Mini-method to get statistics on self
+  # Mini-method to get statistics about the bot using the id that was initialized
   # @return [getBot]
   def self
     getBot(@id)
