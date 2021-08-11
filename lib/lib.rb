@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'faraday'
 require 'json'
 require_relative 'topgg/bot'
@@ -80,40 +81,39 @@ class Topgg
   # @param shards [Integer] The amount of servers the bot is in per shard
   # @param shard_count [Integer] The total number of shards.
   def post_stats(server_count, shards: nil, shard_count: nil)
-    jsonPost = {
+    json_post = {
       server_count: server_count,
       shards: shards,
       shard_count: shard_count
     }.to_json
-    @conn.post("bots/#{@id}/stats", jsonPost, { 'Content-Type' => 'application/json' })
+    @conn.post("bots/#{@id}/stats", json_post, { 'Content-Type' => 'application/json' })
   end
 
-  # Autopost stats on to the top.gg website
+  # Auto-posts stats on to the top.gg website
   # @param client [Discordrb::Bot] instanceof discordrb client.
   def auto_post_stats(client)
     semaphore = Mutex.new
     Thread.new do
       semaphore.synchronize do
         interval 1800 do
-          serverLen = client.servers.length
-          postStats(serverLen)
+          server_len = client.servers.length
+          post_stats(server_len)
           print("[TOPGG] : \033[31;1;4m Bot statistics has been successfully posted!\033[0m")
         end
       end
     end
   end
 
-  # Mini-method to get statistics about the bot using the id that was initialized
-  # @return [getBot]
+  # Mini-method to get statistics on self
+  # @return [get_bot]
   def self
-    getBot(@id)
+    get_bot(@id)
   end
 
   def interval(seconds)
     loop do
       yield
-     sleep seconds
-
+       sleep seconds
     end
   end
 end

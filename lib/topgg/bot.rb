@@ -10,28 +10,29 @@ module Spreader
     # @return [Hash]
     attr_reader :obj
 
+    alias :raw :obj
     # Returns error message, if there's an error
     # @return [String]
     def error
-      @obj['error']
+      @obj['error'].to_str
     end
 
     # Returns the default Avatar of the client
     # @return [String]
     def defAvatar
-      @obj['defAvatar']
+      @obj['defAvatar'].to_str
     end
 
     # Returns the invite link of the bot
     # @return [String]
     def invite
-      @obj['invite']
+      @obj['invite'].to_str
     end
 
     # Returns the bot website, if configured
     # @return [String]
     def website
-      @obj['website']
+      @obj['website'].to_str
     end
 
     # Returns support server link
@@ -43,37 +44,37 @@ module Spreader
     # Returns github repository link, if any
     # @return [String]
     def github
-      @obj['github']
+      @obj['github'].to_str
     end
 
     # Returns the long Description of the bot
     # @return [String]
     def longdesc
-      @obj['longdesc']
+      @obj['longdesc'].to_str
     end
 
     # Returns the short description of the bot
     # @return [String]
     def shortdesc
-      @obj['shortdesc']
+      @obj['shortdesc'].to_str
     end
 
     # Returns the default prefix of the bot
     # @return [String]
     def prefix
-      @obj['prefix']
+      @obj['prefix'].to_str
     end
 
     # Returns the bot library
     # @return [String]
     def lib
-      @obj['lib']
+      @obj['lib'].to_str
     end
 
     # Returns the bot client id
     # @return [String]
     def clientid
-      @obj['clientid']
+      @obj['clientid'].to_str
     end
 
     # Returns the avatar link of the bot
@@ -85,19 +86,19 @@ module Spreader
     # Returns the bot id
     # @return [String]
     def id
-      @obj['id']
+      @obj['id'].to_str
     end
 
     # Returns the bot descriminator
     # @return [String]
     def descriminator
-      @obj['descriminator']
+      @obj['descriminator'].to_str
     end
 
     # Returns the bot username
     # @return [String]
     def username
-      @obj['username']
+      @obj['username'].to_str
     end
 
     # Returns the date on which the bot was submitted
@@ -115,61 +116,61 @@ module Spreader
     # Returns the amount of shards
     # @return [String]
     def shard_count
-      @obj['shard_count']
+      @obj['shard_count'].to_str
     end
 
     # Returns configured guilds in which the bot is in
     # @return [String]
     def guilds
-      @obj['guilds']
+      @obj['guilds'].to_str
     end 
 
     # Returns the amount of guilds per shard of the bot
     # @return [String]
     def shards
-      @obj['shards']
+      @obj['shards'].to_str
     end
 
     # Returns the monthyPoints of the bot
     # @return [String]
     def monthlyPoints
-      @obj['monthlyPoints']
+      @obj['monthlyPoints'].to_str
     end
 
     # Returns the total points of the bot
     # @return [String]
     def points
-      @obj['points']
+      @obj['points'].to_str
     end
 
     # Returns true/false depending on if the bot is certified or not
     # @return [Boolean]
     def certifiedBot
-      @obj['certifiedBot']
+      @obj['certifiedBot'].to_str
     end
 
     # Returns the owner ids
     # @return [Array<String>]
     def owners
-      @obj['owners']
+      @obj['owners'].to_str
     end
 
     # Return the bot tags
     # @return [Array<String>]
     def tags
-      @obj['tags']
+      @obj['tags'].to_str
     end
 
     # Returns the bot banner url
     # @return [String]
     def bannerUrl
-      @obj['bannerUrl']
+      @obj['bannerUrl'].to_str
     end
 
     # Returns the donate bot guild ID
     # @return [String]
     def donatebotguildid
-      @obj['donatebotguildid']
+      @obj['donatebotguildid'].to_str
     end
   end
 end
