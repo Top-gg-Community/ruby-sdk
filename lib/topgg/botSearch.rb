@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Spreader
+module Dbl
   # This class spreads the BotSearch Response body into different methods
   class BotSearch
     # Initalizes the BotSearch class
@@ -10,6 +10,10 @@ module Spreader
     # Get raw hash response
     # @return [Hash]
     attr_reader :obj
+    
+    alias raw obj
+
+    alias data obj
 
     # The Total number of results
     # @return [Integer]

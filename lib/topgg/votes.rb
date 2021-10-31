@@ -1,4 +1,4 @@
-module Spreader
+module Dbl
   # This class Spreads the Vote response body into different methods.
   class Votes
     # Initializes the votes class
@@ -10,7 +10,10 @@ module Spreader
     # Get raw hash return of the object
     # @return [Hash]
     attr_reader :obj
+    
+    alias raw obj
 
+    alias data obj
     # Get the first vote amongst all the other votes.
     # @return [Spreader::User]
     def first

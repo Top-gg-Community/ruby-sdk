@@ -1,4 +1,4 @@
-module Spreader
+module Dbl
   # The Stats class spreads the json response into different methods
   class Stats
     # Initializes the Stats class
@@ -9,7 +9,10 @@ module Spreader
 
     # Returns raw Hash of the response
     attr_reader :obj
+    
+    alias raw obj 
 
+    alias data obj
     # Returns the server Count of the bot
     # @return [Integer]
     def server_count

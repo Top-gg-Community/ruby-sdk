@@ -1,4 +1,4 @@
-module Spreader
+module Dbl
   # The Bot class spreads the json parsed hash into different methods
   class Bot
     # Initializes the Bot class
@@ -11,6 +11,8 @@ module Spreader
     attr_reader :obj
 
     alias :raw :obj
+
+    alias data obj
     # Returns error message, if there's an error
     # @return [String]
     def error

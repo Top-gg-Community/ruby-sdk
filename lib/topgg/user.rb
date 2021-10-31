@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Spreader
+module Dbl
   # The User class, used for Spreading the response body into different methods
   class User
     # Instantiates the class variables
@@ -10,6 +10,9 @@ module Spreader
 
     attr_reader :obj
 
+    alias raw obj
+
+    alias data obj
     # Check for errors, if any
     def error
       @obj['error']

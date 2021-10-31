@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'topgg'
-  spec.version       = '1.0.5'
+  spec.version       = '1.1.0'
   spec.authors       = ['Adonis Tremblay']
   spec.email         = ['rhydderchc@gmail.com']
 
