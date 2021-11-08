@@ -20,8 +20,6 @@ gem install topgg
 You require a Token to interact with the Api.
 The token can be found at `https://top.gg/bot/[YOUR_BOT_ID]/webhooks` 
 
-
-![page](https://i.ibb.co/txp0ghr/Screenshot-from-2021-10-31-00-59-39.png)
 ## Example
 
 Here's a straightforward example of how to request data with the wrapper.
